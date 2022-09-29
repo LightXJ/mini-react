@@ -96,8 +96,8 @@ const isGone = (prev, next) => key => !(key in next)
 function updateDom(dom, prevProps, nextProps){
   // Remove old or changed event listeners
   Object.keys(prevProps)
-    .fiber(isEvent)
-    .fiber(key=>!(key in nextProps) || isNew(prevProps, nextProps)(key))
+    .filter(isEvent)
+    .filter(key=>!(key in nextProps) || isNew(prevProps, nextProps)(key))
     .forEach(name=>{
       const eventType = name.toLowerCase().substring(2);
       dom.removeEventListener(
