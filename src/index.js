@@ -1,5 +1,4 @@
 const createTextElement = (text)=>{
-  debugger
   return {
     type: 'TEXT_ELEMENT',
     props: {
@@ -125,7 +124,6 @@ function reconcileChildren(wipFiber, elements){
   let oldFiber = wipFiber.alternate && wipFiber.alternate.child;
   let prevSibling = null;
 
-
   while( index < elements.length || oldFiber !==null ){
     const element = elements[index];
 
@@ -200,8 +198,8 @@ const render = (element, container)=>{
     
 
     // TODO create new fibers
-    reconcileChildren(fiber, element);
-
+    const elements = fiber.props.children;
+    reconcileChildren(fiber, elements);
     // TODO return next unit of work
     if(fiber.child){
       return fiber.child
