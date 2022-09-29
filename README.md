@@ -20,3 +20,4 @@ npm install
 npm run dev
 ```
 在浏览器打开index.html文件预览效果
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/31470234/193023044-4d5ddb67-b87f-4cde-95d2-eb0084b52805.png">
