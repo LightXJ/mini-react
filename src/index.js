@@ -306,8 +306,13 @@ const Didact = {
 function Counter(){
   const [count, setCount] = Didact.useState(1);
 
+  const handleCountClick = ()=>{
+    setCount(count=>count+1);
+    setCount(count=>count+2);
+  }
+
   return (
-    <h1 onClick={()=>{setCount(count=>count+1)}} style="user-select: none">
+    <h1 onClick={handleCountClick} style="user-select: none">
       Count: {count}
     </h1>
   )
